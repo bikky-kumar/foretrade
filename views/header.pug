@@ -1,0 +1,39 @@
+doctype html
+html(lang='en')
+    head    
+        title #{title}
+        link(rel="shortcut icon" type="image/x-icon" href="/resources/images/favicon.ico")
+        link(rel="icon" href="/resources/images/favicon.ico" type="image/x-icon")
+        link(rel = 'stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
+        link(rel='stylesheet' href='/resources/css/style.css')
+        <link href="https://fonts.googleapis.com/css?family=Lilita+One" rel="stylesheet">
+    body
+        nav.navbar.navbar-expand-lg
+            .container
+                .navbar-header
+                    a.navbar-brand(href='/') <img src="/resources/images/S4.png" alt="logo">oreTrade
+                    button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+                        span.toggle-button &#9776;
+                    #navbarNav.collapse.navbar-collapse
+                        ul.navbar-nav
+                            li.nav-item.active
+                                a.nav-link(href='#')
+                                    | Home 
+                                    span.sr-only (current)
+                            li.nav-item
+                                a.nav-link(href='/project/details') Project Details
+                            li.nav-item
+                                a.nav-link(href='#') Contributors
+                            li.nav-item
+                                a.nav-link.disabled(href='#') Contact 
+        .container
+            br
+            h1 #{title}
+            br
+            block content
+            br
+            hr
+            include ./footer.pug
+
+    Script(src='/bower_components/jquery/dist/jquery.js')
+    Script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
