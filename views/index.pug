@@ -3,10 +3,33 @@ extends header
 block content
     .container
         form(method='POST', action='/search/stocks').form-inline.md-form.mr-auto.mb-4
-            input.form-control.mr-sm-2(name = 'search', type='text', placeholder='Search', aria-label='Search')
-            button.btn.blue-gradient.btn-rounded.btn-sm.my-0.waves-effect.waves-light(type='submit') Predict
+            input.form-control.mr-sm-2(name = 'search', type='text', placeholder='Search Equity/Stocks', aria-label='Search')
+            button.btn.blue-gradient.btn-rounded.btn-sm.my-0.waves-effect.waves-light(type='submit') Search
 
-
-        ul.list-group
-            li Hello World
-    
+        if results
+            .modern-table-header 
+                .modern-table-title
+                    h2 Stocks
+            table.modern-table#modern-table
+                tr
+                    th Symbol
+                    th Name  
+                    th Type  
+                    th Region 
+                    th Currency 
+                    th Status
+                    th Prediction
+                each result, i in results       
+                    tr
+                    td= result['1. symbol']
+                    td= result['2. name']
+                    td= result['3. type']
+                    td= result['4. region']
+                    td= result['8. currency']
+                    td.action 
+                        a(href='#'+result['1. symbol'])  <i class="material-icons material-icons">C</i>
+                    td.action 
+                        a(href='/predict/stock/'+result['1. symbol'])  <i class="material-icons material-icons">P</i>
+        else 
+            P Hello World            
+        

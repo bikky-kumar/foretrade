@@ -17,9 +17,6 @@ router.post('/stocks', function(req, res){
             });
         }
         if(response.statusCode == 200){
-            const m = result.bestMatches[0]
-            console.log('body:', result.bestMatches[0]);
-            console.log('name:', m['2. name']);
             res.render('index', {
                 results: result.bestMatches
             })

@@ -1,3 +1,7 @@
+body{
+    background-color: #f3f3f3 !important;
+}
+
 .navbar{
     background: #323232 !important;
 }
@@ -33,13 +37,20 @@
 }
 
 .md-form {
+    background: #fff;
     position: relative;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
+    float: right;
+    padding: 10px;
+    box-shadow: 0 0px 20px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 0px 20px 0px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0 0px 20px 0px rgba(0, 0, 0, 0.15);
+    -o-box-shadow: 0 0px 20px 0px rgba(0, 0, 0, 0.15);
+    -ms-box-shadow: 0 0px 20px 0px rgba(0, 0, 0, 0.15);
 }
 
 .md-form .form-control{
-    width: 60%;
     margin: 0 0 .5rem 0;
     -webkit-border-radius: 0;
     border-radius: 0;
@@ -121,5 +132,72 @@
     padding: 1rem 0.75rem !important;
 }
 
+
+.modern-table-title{
+    width: 100%;
+    color: #555;
+    letter-spacing: 2px;
+    padding: 10px;
+    float: left;
+  }
+  
+  .modern-table-filter{
+    max-width: 300px;
+    color: #555;
+    letter-spacing: 2px;
+    padding: 10px;
+    float: right; 
+  }
+  
+/*table styling start
+*/
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    letter-spacing: 2px;
+    border-bottom: 1px solid #fff;
+    text-align: left;
+    padding: 20px;
+  }
+  
+  td.action{
+    text-align: center;
+    padding: 0;
+  }
+  
+  tr:nth-child(even) {
+    background: #f8f6ff;
+  }
+  
+  .modern-table{
+    background: #ffffff;
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 0 0px 20px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 0px 20px 0px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0 0px 20px 0px rgba(0, 0, 0, 0.15);
+    -o-box-shadow: 0 0px 20px 0px rgba(0, 0, 0, 0.15);
+    -ms-box-shadow: 0 0px 20px 0px rgba(0, 0, 0, 0.15);
+  }
+  
+  .copyright{
+    margin-left: 20px;
+    font-size: 10px;
+    color: #f8f8f8;
+    padding: 10px;
+  }
+  
+
+  .modern-table th{
+    font-weight: 100;
+    color: rgb(222, 235, 255);
+    font-size: 15px;
+    background:#0747a6;
+  }  
 
 

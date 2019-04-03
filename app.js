@@ -43,6 +43,9 @@ app.get('/project/details', function(req, res){
 let search = require('./routes/search');
 app.use('/search', search)
 
+let predict = require('./routes/predict')
+app.use('/predict', predict)
+
 
 
 
