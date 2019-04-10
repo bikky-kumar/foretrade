@@ -8,7 +8,7 @@ const app = express();
 const PORT = 2000;
 
 
-//Load View Engine
+//Load View Engine by setting up basedir
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
@@ -45,6 +45,9 @@ app.use('/search', search)
 
 let predict = require('./routes/predict')
 app.use('/predict', predict)
+
+let status = require('./routes/current_status')
+app.use('/stock', status)
 
 
 

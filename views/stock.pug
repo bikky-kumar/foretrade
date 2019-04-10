@@ -1,0 +1,35 @@
+extends template/header 
+
+block content
+    .container
+        include ./template/includes/search.pug
+        br
+        h1.title #{title}
+        br
+        table.modern-table#modern-table
+            tr
+                th Symbol
+                th Last Refreshed 
+                th Information      
+                tr
+                td= meta_data['2. Symbol']
+                td= meta_data['3. Last Refreshed']
+                td= meta_data['1. Information']
+
+        if results
+            table.modern-table#modern-table
+                tr
+                    th Open
+                    th High
+                    th Low
+                    th Close
+                    th Volume
+                each result, i in results          
+                    tr
+                    td= result[1]['1. open']
+                    td= result[1]['2. high']
+                    td= result[1]['3. low']
+                    td= result[1]['4. close']
+                    td= result[1]['5. volume']            
+        else
+            p= error  

@@ -1,7 +1,11 @@
-extends header 
+extends template/header 
 
 block content
     .container
+        include ./template/includes/search.pug
+        br
+        h1.title #{title}
+        br
         p Working on giving you a predection for your 
         span= symbol
         p= result

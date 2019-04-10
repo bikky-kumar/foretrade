@@ -1,12 +1,13 @@
-extends header 
-
+extends template/header 
+    
 block content
     .container
-        form(method='POST', action='/search/stocks').form-inline.md-form.mr-auto.mb-4
-            input.form-control.mr-sm-2(name = 'search', type='text', placeholder='Search Equity/Stocks', aria-label='Search')
-            button.btn.blue-gradient.btn-rounded.btn-sm.my-0.waves-effect.waves-light(type='submit') Search
-
+        br
+        h1.title 
+        br
         if results
+            include ./template/includes/search.pug
+            br
             .modern-table-header 
                 .modern-table-title
                     h2 Stocks
@@ -27,9 +28,14 @@ block content
                     td= result['4. region']
                     td= result['8. currency']
                     td.action 
-                        a(href='#'+result['1. symbol'])  <i class="material-icons material-icons">C</i>
+                        a(href='/stock/status/'+result['1. symbol']+'/'+result['2. name'])  <i class="material-icons material-icons">C</i>
                     td.action 
                         a(href='/predict/stock/'+result['1. symbol'])  <i class="material-icons material-icons">P</i>
-        else 
-            P Hello World            
-        
+        else
+            link(rel='stylesheet' href='/resources/css/home.css')
+            .corp_home
+                #logo
+                    <img src="/resources/images/logo.png" alt="logo">
+                #search_bar
+                    include ./template/includes/search.pug
+                

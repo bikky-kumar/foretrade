@@ -17,23 +17,20 @@ html(lang='en')
                     #navbarNav.collapse.navbar-collapse
                         ul.navbar-nav
                             li.nav-item.active
-                                a.nav-link(href='#')
+                                a.nav-link(href='/')
                                     | Home 
                                     span.sr-only (current)
                             li.nav-item
-                                a.nav-link(href='/project/details') Project Details
+                                a.nav-link(href='/project/details') Project
                             li.nav-item
                                 a.nav-link(href='#') Contributors
                             li.nav-item
                                 a.nav-link.disabled(href='#') Contact 
         .container
             br
-            h1 #{title}
-            br
             block content
             br
-            hr
-            include ./footer.pug
+    include ./footer.pug
 
     Script(src='/bower_components/jquery/dist/jquery.js')
     Script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
