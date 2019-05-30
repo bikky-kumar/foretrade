@@ -35,7 +35,7 @@ body{
     background: #ffffff!important;
 }
 .navbar-header a img{
-    width: 50px;
+    width: 70px;
 }
 
 .navbar-nav li a{
@@ -242,4 +242,26 @@ table {
     font-size: 25px;
   }
 
+  .predection_visual{
+    padding: 10px;
+    margin: 1em;
+  }
 
+  h6{
+    text-align: center;
+    color: mediumvioletred;
+  }
+
+  canvas{
+    height: 470px !important;
+    width: 100% !important;
+  }
+
+  i{
+    padding: 5px;
+  }
+  i:hover{
+    background: #eee;
+    border-radius: 16px;
+    padding: 5px;
+  }

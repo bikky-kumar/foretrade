@@ -5,9 +5,37 @@ block content
         include ./template/includes/search.pug
         br
         h1.title #{title}
-        br
-        p Working on giving you a predection for your 
-        span= symbol
-        p= result
-        
-        
+        hr
+        .predection_page
+            .predection_visual
+                <canvas id = "predection_chart" width=200 height=200></canvas>
+            hr
+            .predection_summary
+                h1.title= symbol + ' Summary '
+                if result
+                    if result[0] > result[364]
+                        p= 'According to the ML Model the prices of stock ('+symbol+') as over all will decrease in next 365 days'
+                    else
+                        p= 'According to the ML Model the prices of stock ('+symbol+') as over all  will increase in next 365 days'    
+            hr
+            .prediction-table
+                table.modern-table
+                    tr
+                        th Symbol
+                        th Day      
+                        tr
+                        td= symbol
+                        td= day
+                if result
+                    table.modern-table#modern-table
+                        tr
+                            th Next Day
+                            th Close
+                        each price, i in result          
+                            tr
+                                td= 'Day ' + (i+1)
+                                td= (result[i]).toFixed(3)     
+                else
+                    p= error  
+
+    Script(src='/resources/scripts/chart.js')       

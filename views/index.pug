@@ -11,7 +11,7 @@ block content
             .modern-table-header 
                 .modern-table-title
                     h2 Stocks
-            table.modern-table#modern-table
+            table.modern-table
                 tr
                     th Symbol
                     th Name  
@@ -28,9 +28,9 @@ block content
                     td= result['4. region']
                     td= result['8. currency']
                     td.action 
-                        a(href='/stock/status/'+result['1. symbol']+'/'+result['2. name'])  <i class="material-icons material-icons">C</i>
+                        a(href='/stock/status/'+result['1. symbol']+'/'+result['2. name'])  <i class="material-icons">label_important</i>
                     td.action 
-                        a(href='/predict/stock/'+result['1. symbol'])  <i class="material-icons material-icons">P</i>
+                        a(href='/predict/stock/'+result['1. symbol']) <i class="material-icons">timeline</i> 
         else
             link(rel='stylesheet' href='/resources/css/home.css')
             .corp_home
